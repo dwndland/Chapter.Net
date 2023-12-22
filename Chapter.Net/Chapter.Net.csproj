@@ -1,9 +1,35 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    <Version>1.0.0</Version>
+    <Authors>David Wendland</Authors>
+    <Description>Chapter.Net brings classes and operations for every day projects. Its the perfect base for any MVVM project.</Description>
+    <Copyright>Copyright (c) 2023 David Wendland</Copyright>
+    <PackageProjectUrl>https://github.com/dwndland/Chapter.Net</PackageProjectUrl>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\CHANGELOG.md">
+      <Pack>False</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>False</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

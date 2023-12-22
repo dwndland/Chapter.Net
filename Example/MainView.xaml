@@ -1,0 +1,74 @@
+﻿<Window x:Class="Example.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:example="clr-namespace:Example"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Chapter.Net"
+        Width="800"
+        Height="450"
+        d:DataContext="{d:DesignInstance example:MainViewModel}"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="ItemStyle" TargetType="{x:Type UserControl}">
+            <Setter Property="Margin" Value="40" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+    </Window.Resources>
+
+    <TabControl TabStripPlacement="Left">
+        <TabItem Header="ObservableObject">
+            <example:ObservableObjectView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="ValidatableObservableObject">
+            <example:ValidatableObservableObjectView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="DelegateCommand">
+            <example:DelegateCommandView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="AsyncDelegateCommand">
+            <example:AsyncDelegateCommandView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="AsyncEventHandler">
+            <example:AsyncEventHandlerView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="EventArgs">
+            <example:EventArgsView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="CollectionEx">
+            <example:CollectionExView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="EnumerableEx">
+            <example:EnumerableExView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="ListEx">
+            <example:ListExView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="ObjectEx">
+            <example:ObjectExView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="GarbageTruck">
+            <example:GarbageTruckView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="NameOf">
+            <example:NameOfView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="ObservableList">
+            <example:ObservableListView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="ServiceLocator">
+            <example:ServiceLocatorView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="TaskExtensions">
+            <example:TaskExtensionsView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="Validation">
+            <example:ValidationView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+        <TabItem Header="WorkingIndicator">
+            <example:WorkingIndicatorView Style="{StaticResource ItemStyle}" />
+        </TabItem>
+    </TabControl>
+
+</Window>

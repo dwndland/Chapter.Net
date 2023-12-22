@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Example.ObservableListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:example="clr-namespace:Example"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DataContext="{d:DesignInstance example:ObservableListViewModel}"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+    <DockPanel>
+        <StackPanel Margin="40,0,0,0" DockPanel.Dock="Right">
+            <CheckBox Content="DisableNotification" IsChecked="{Binding DisableNotification}" />
+            <CheckBox Content="CatchPropertyChanging" IsChecked="{Binding CatchPropertyChanging}" />
+            <CheckBox Content="CatchPropertyChanged" IsChecked="{Binding CatchPropertyChanged}" />
+            <Button Content="AddRange" Command="{Binding AddRangeCommand}" />
+            <Button Content="Clear" Command="{Binding ClearCommand}" />
+            <Button Content="Replace" Command="{Binding ReplaceCommand}" />
+            <Button Content="Reverse" Command="{Binding ReverseCommand}" />
+            <Button Content="Sort" Command="{Binding SortCommand}" />
+            <Button Content="Move" Command="{Binding MoveCommand}" />
+            <Button Content="Swap" Command="{Binding SwapCommand}" />
+            <Button Content="Insert" Command="{Binding InsertCommand}" />
+            <Button Content="Remove" Command="{Binding RemoveCommand}" />
+            <Button Content="RemoveLast" Command="{Binding RemoveLastCommand}" />
+            <Button Content="RemoveAll" Command="{Binding RemoveAllCommand}" />
+            <Button Content="RemoveRange" Command="{Binding RemoveRangeCommand}" />
+        </StackPanel>
+
+        <ListBox ItemsSource="{Binding Items}" Width="300" DisplayMemberPath="Name" />
+    </DockPanel>
+
+</UserControl>
