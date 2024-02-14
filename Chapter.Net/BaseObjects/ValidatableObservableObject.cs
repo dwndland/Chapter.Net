@@ -26,7 +26,7 @@ public abstract class ValidatableObservableObject : ObservableObject, INotifyDat
     /// </summary>
     protected ValidatableObservableObject()
     {
-        _errors = new NotifyDataErrorInfo();
+        _errors = new NotifyDataErrorInfo(NotifyPropertyChanged);
     }
 
     /// <summary>

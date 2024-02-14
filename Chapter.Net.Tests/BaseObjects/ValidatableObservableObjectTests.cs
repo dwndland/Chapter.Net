@@ -505,19 +505,29 @@ public class ValidatableObservableObjectTests
 
     private void TestErrorChanged(Action action, params string[] propertyNames)
     {
-        var triggered = false;
+        var triggered1 = false;
+        var triggered2 = false;
         _target.ErrorsChanged += TargetOnErrorsChanged;
+        _target.PropertyChanged += TargetOnPropertyChanged;
 
         action();
 
         _target.ErrorsChanged -= TargetOnErrorsChanged;
+        _target.PropertyChanged -= TargetOnPropertyChanged;
 
-        Assert.That(triggered, Is.True);
+        Assert.That(triggered1, Is.True);
+        Assert.That(triggered2, Is.True);
         return;
 
         void TargetOnErrorsChanged(object sender, DataErrorsChangedEventArgs e)
         {
-            triggered = propertyNames.Contains(e.PropertyName);
+            triggered1 = propertyNames.Contains(e.PropertyName);
+        }
+
+        void TargetOnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            triggered2 = propertyNames.Contains(e.PropertyName);
         }
     }
+
 }

@@ -15,8 +15,13 @@ namespace Example;
 
 public class ValidationViewModel : ObservableObject, INotifyDataErrorInfo
 {
-    private readonly NotifyDataErrorInfo _errors = new();
+    private readonly NotifyDataErrorInfo _errors;
     private string _validatedValue = string.Empty;
+
+    public ValidationViewModel()
+    {
+        _errors = new NotifyDataErrorInfo(NotifyPropertyChanged);
+    }
 
     public string ValidatedValue
     {

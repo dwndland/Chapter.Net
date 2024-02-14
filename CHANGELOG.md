@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2024-02-14
+### Fixed
+- Added missing raise of PropertyChanged in the ValidatableObservableObject and NotifyDataErrorInfo to fully support refresh the UI after evaluate a property value.
+
 ## [1.0.0] - 2023-12-22
 ### Added
 - Init project

@@ -17,11 +17,12 @@ namespace Chapter.Net.Tests;
 public class NotifyDataErrorInfoTests
 {
     private NotifyDataErrorInfo _target;
+    private string _lastPropertyChanged;
 
     [SetUp]
     public void SetUp()
     {
-        _target = new NotifyDataErrorInfo();
+        _target = new NotifyDataErrorInfo(x => _lastPropertyChanged = x);
     }
 
     [Test]
@@ -507,6 +508,8 @@ public class NotifyDataErrorInfoTests
         _target.ErrorsChanged -= TargetOnErrorsChanged;
 
         Assert.That(triggered, Is.True);
+        Assert.That(propertyNames.Contains(_lastPropertyChanged), Is.True);
+
         return;
 
         void TargetOnErrorsChanged(object sender, DataErrorsChangedEventArgs e)

@@ -20,12 +20,16 @@ namespace Chapter.Net;
 public class NotifyDataErrorInfo : INotifyDataErrorInfo
 {
     private readonly Dictionary<string, List<string>> _errors;
+    private readonly Action<string> _propertyChangedCallback;
 
     /// <summary>
     ///     Creates a new instance of <see cref="NotifyDataErrorInfo" />.
     /// </summary>
-    public NotifyDataErrorInfo()
+    /// <param name="propertyChangedCallback">The callback to raise property changed from the owner object.</param>
+    /// <exception cref="ArgumentNullException">propertyChangedCallback cannot be null.</exception>
+    public NotifyDataErrorInfo(Action<string> propertyChangedCallback)
     {
+        _propertyChangedCallback = propertyChangedCallback ?? throw new ArgumentNullException(nameof(propertyChangedCallback));
         _errors = new Dictionary<string, List<string>>();
     }
 
@@ -210,5 +214,6 @@ public class NotifyDataErrorInfo : INotifyDataErrorInfo
     private void OnErrorsChanged(string propertyName)
     {
         ErrorsChanged?.Invoke(this, new DataErrorsChangedEventArgs(propertyName));
+        _propertyChangedCallback.Invoke(propertyName);
     }
 }
