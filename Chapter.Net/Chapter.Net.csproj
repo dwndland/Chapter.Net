@@ -5,7 +5,7 @@
     <Version>1.0.1</Version>
     <Authors>David Wendland</Authors>
     <Description>Chapter.Net brings classes and operations for every day projects. Its the perfect base for any MVVM project.</Description>
-    <Copyright>Copyright (c) 2023 David Wendland</Copyright>
+    <Copyright>Copyright (c) 2024 David Wendland</Copyright>
     <PackageProjectUrl>https://github.com/dwndland/Chapter.Net</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
