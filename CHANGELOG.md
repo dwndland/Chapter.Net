@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2024-03-31
+### Added
+- Added more supported .net versions.
+### Supported .Net Versions
+- .Net Standard 2.0
+- .Net Core 3.0
+- .Net Framework 4.5
+- .Net 5
+- .Net 6
+- .Net 7
+- .Net 8
+
 ## [1.0.1] - 2024-02-14
 ### Fixed
 - Added missing raise of PropertyChanged in the ValidatableObservableObject and NotifyDataErrorInfo to fully support refresh the UI after evaluate a property value.

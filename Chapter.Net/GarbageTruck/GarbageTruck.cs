@@ -10,43 +10,44 @@ using System.Linq;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net;
-
-/// <summary>
-///     Holds a list of <see cref="IDisposable" />s for an easy dispose of all of them in one go.
-/// </summary>
-public class GarbageTruck : IDisposable
+namespace Chapter.Net
 {
-    private readonly List<IDisposable> _disposables;
-
     /// <summary>
-    ///     Creates a new instance of GarbageTruck.
+    ///     Holds a list of <see cref="IDisposable" />s for an easy dispose of all of them in one go.
     /// </summary>
-    public GarbageTruck()
+    public class GarbageTruck : IDisposable
     {
-        _disposables = new List<IDisposable>();
-    }
+        private readonly List<IDisposable> _disposables;
 
-    /// <summary>
-    ///     Disposes all currently hold items.
-    /// </summary>
-    public void Dispose()
-    {
-        var itemsToDispose = _disposables.ToList();
-        _disposables.Clear();
-        itemsToDispose.ForEach(x => x.Dispose());
-    }
+        /// <summary>
+        ///     Creates a new instance of GarbageTruck.
+        /// </summary>
+        public GarbageTruck()
+        {
+            _disposables = new List<IDisposable>();
+        }
 
-    /// <summary>
-    ///     Adds a new disposable to the truck.
-    /// </summary>
-    /// <param name="disposable">The item to keep to dispose later.</param>
-    /// <exception cref="ArgumentNullException">disposable cannot be null.</exception>
-    public void Add(IDisposable disposable)
-    {
-        if (disposable == null)
-            throw new ArgumentNullException(nameof(disposable));
+        /// <summary>
+        ///     Disposes all currently hold items.
+        /// </summary>
+        public void Dispose()
+        {
+            var itemsToDispose = _disposables.ToList();
+            _disposables.Clear();
+            itemsToDispose.ForEach(x => x.Dispose());
+        }
 
-        _disposables.Add(disposable);
+        /// <summary>
+        ///     Adds a new disposable to the truck.
+        /// </summary>
+        /// <param name="disposable">The item to keep to dispose later.</param>
+        /// <exception cref="ArgumentNullException">disposable cannot be null.</exception>
+        public void Add(IDisposable disposable)
+        {
+            if (disposable == null)
+                throw new ArgumentNullException(nameof(disposable));
+
+            _disposables.Add(disposable);
+        }
     }
 }

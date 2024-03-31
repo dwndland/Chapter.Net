@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
-    <Version>1.0.1</Version>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0;net45;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+    <Version>1.1.0</Version>
     <Authors>David Wendland</Authors>
     <Description>Chapter.Net brings classes and operations for every day projects. Its the perfect base for any MVVM project.</Description>
     <Copyright>Copyright (c) 2024 David Wendland</Copyright>

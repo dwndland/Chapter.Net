@@ -8,16 +8,17 @@ using System;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net;
-
-/// <summary>
-///     Provides a way how to invoke an action.
-/// </summary>
-public interface IInvokator
+namespace Chapter.Net
 {
     /// <summary>
-    ///     Invokes an action.
+    ///     Provides a way how to invoke an action.
     /// </summary>
-    /// <param name="action">The action to invoke.</param>
-    void Invoke(Action action);
+    public interface IInvokator
+    {
+        /// <summary>
+        ///     Invokes an action.
+        /// </summary>
+        /// <param name="action">The action to invoke.</param>
+        void Invoke(Action action);
+    }
 }

@@ -8,15 +8,16 @@ using System.Windows.Input;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net;
-
-/// <summary>
-///     Extends the ICommand with an <see cref="RaiseCanExecuteChanged" />.
-/// </summary>
-public interface IDelegateCommand : ICommand
+namespace Chapter.Net
 {
     /// <summary>
-    ///     Raises the CanExecuteChanged to have the CanExecute checked again.
+    ///     Extends the ICommand with an <see cref="RaiseCanExecuteChanged" />.
     /// </summary>
-    void RaiseCanExecuteChanged();
+    public interface IDelegateCommand : ICommand
+    {
+        /// <summary>
+        ///     Raises the CanExecuteChanged to have the CanExecute checked again.
+        /// </summary>
+        void RaiseCanExecuteChanged();
+    }
 }

@@ -1,3 +1,4 @@
+![Logo](https://raw.githubusercontent.com/dwndland/Chapter.Net/master/Icon.png){width=64}
 # Chapter.Net Library
 
 ## Overview
