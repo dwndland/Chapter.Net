@@ -8,24 +8,22 @@ using System;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net
+namespace Chapter.Net;
+
+/// <summary>
+///     Invokes actions directly.
+/// </summary>
+public sealed class DirectInvokator : IInvokator
 {
     /// <summary>
-    ///     Invokes actions directly.
+    ///     Invokes an action.
     /// </summary>
-    public sealed class DirectInvokator : IInvokator
+    /// <param name="action">The action to invoke.</param>
+    /// <exception cref="ArgumentNullException">action cannot be null.</exception>
+    public void Invoke(Action action)
     {
-        /// <summary>
-        ///     Invokes an action.
-        /// </summary>
-        /// <param name="action">The action to invoke.</param>
-        /// <exception cref="ArgumentNullException">action cannot be null.</exception>
-        public void Invoke(Action action)
-        {
-            if (action == null)
-                throw new ArgumentNullException(nameof(action));
+        ArgumentNullException.ThrowIfNull(action);
 
-            action();
-        }
+        action();
     }
 }

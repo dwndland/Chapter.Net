@@ -11,10 +11,4 @@
     <ProjectReference Include="..\Chapter.Net\Chapter.Net.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Events\EventArgsView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-
 </Project>

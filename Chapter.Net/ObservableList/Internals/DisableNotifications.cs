@@ -8,15 +8,14 @@ using System;
 
 // ReSharper disable once CheckNamespace
 
-namespace Chapter.Net
-{
-    internal class DisableNotifications : IDisposable
-    {
-        public void Dispose()
-        {
-            Disposed?.Invoke(this, EventArgs.Empty);
-        }
+namespace Chapter.Net;
 
-        public event EventHandler Disposed;
+internal class DisableNotifications : IDisposable
+{
+    public void Dispose()
+    {
+        Disposed?.Invoke(this, EventArgs.Empty);
     }
+
+    public event EventHandler Disposed;
 }
