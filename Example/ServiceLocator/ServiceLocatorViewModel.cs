@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ServiceLocatorViewModel.cs" company="my-libraries">
+// <copyright file="ServiceLocatorViewModel.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -12,13 +12,6 @@ namespace Example;
 
 public class ServiceLocatorViewModel
 {
-    public ServiceLocatorViewModel()
-    {
-        //var builder = WebApplication.CreateBuilder(args);
-        
-        //builder.Services.UseServiceLocator();
-    }
-
     private void DoIt()
     {
         var viewModel = ServiceLocator.Resolve<ServiceLocatorViewModel>();

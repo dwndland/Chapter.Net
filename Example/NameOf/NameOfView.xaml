@@ -11,15 +11,15 @@
 
     <StackPanel>
         <TextBlock Text="Name" />
-        <TextBlock Text="{Binding Name}" Margin="10,0,0,10" />
+        <TextBlock Margin="10,0,0,10" Text="{Binding Name}" />
         <TextBlock Text="NameWithProperty" />
-        <TextBlock Text="{Binding NameWithProperty}" Margin="10,0,0,10" />
+        <TextBlock Margin="10,0,0,10" Text="{Binding NameWithProperty}" />
         <TextBlock Text="Namespace" />
-        <TextBlock Text="{Binding Namespace}" Margin="10,0,0,10" />
+        <TextBlock Margin="10,0,0,10" Text="{Binding Namespace}" />
         <TextBlock Text="FullName" />
-        <TextBlock Text="{Binding FullName}" Margin="10,0,0,10" />
+        <TextBlock Margin="10,0,0,10" Text="{Binding FullName}" />
         <TextBlock Text="FullNameWithProperty" />
-        <TextBlock Text="{Binding FullNameWithProperty}" Margin="10,0,0,0" />
+        <TextBlock Margin="10,0,0,0" Text="{Binding FullNameWithProperty}" />
     </StackPanel>
 
 </UserControl>

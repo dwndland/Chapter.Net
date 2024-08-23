@@ -14,21 +14,23 @@
             <CheckBox Content="DisableNotification" IsChecked="{Binding DisableNotification}" />
             <CheckBox Content="CatchPropertyChanging" IsChecked="{Binding CatchPropertyChanging}" />
             <CheckBox Content="CatchPropertyChanged" IsChecked="{Binding CatchPropertyChanged}" />
-            <Button Content="AddRange" Command="{Binding AddRangeCommand}" />
-            <Button Content="Clear" Command="{Binding ClearCommand}" />
-            <Button Content="Replace" Command="{Binding ReplaceCommand}" />
-            <Button Content="Reverse" Command="{Binding ReverseCommand}" />
-            <Button Content="Sort" Command="{Binding SortCommand}" />
-            <Button Content="Move" Command="{Binding MoveCommand}" />
-            <Button Content="Swap" Command="{Binding SwapCommand}" />
-            <Button Content="Insert" Command="{Binding InsertCommand}" />
-            <Button Content="Remove" Command="{Binding RemoveCommand}" />
-            <Button Content="RemoveLast" Command="{Binding RemoveLastCommand}" />
-            <Button Content="RemoveAll" Command="{Binding RemoveAllCommand}" />
-            <Button Content="RemoveRange" Command="{Binding RemoveRangeCommand}" />
+            <Button Command="{Binding AddRangeCommand}" Content="AddRange" />
+            <Button Command="{Binding ClearCommand}" Content="Clear" />
+            <Button Command="{Binding ReplaceCommand}" Content="Replace" />
+            <Button Command="{Binding ReverseCommand}" Content="Reverse" />
+            <Button Command="{Binding SortCommand}" Content="Sort" />
+            <Button Command="{Binding MoveCommand}" Content="Move" />
+            <Button Command="{Binding SwapCommand}" Content="Swap" />
+            <Button Command="{Binding InsertCommand}" Content="Insert" />
+            <Button Command="{Binding RemoveCommand}" Content="Remove" />
+            <Button Command="{Binding RemoveLastCommand}" Content="RemoveLast" />
+            <Button Command="{Binding RemoveAllCommand}" Content="RemoveAll" />
+            <Button Command="{Binding RemoveRangeCommand}" Content="RemoveRange" />
         </StackPanel>
 
-        <ListBox ItemsSource="{Binding Items}" Width="300" DisplayMemberPath="Name" />
+        <ListBox Width="300"
+                 DisplayMemberPath="Name"
+                 ItemsSource="{Binding Items}" />
     </DockPanel>
 
 </UserControl>

@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ObservableListViewModel.cs" company="my-libraries">
+// <copyright file="ObservableListViewModel.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -100,10 +100,7 @@ public class ObservableListViewModel
 
     private void Swap()
     {
-        Execute(() =>
-        {
-            Items.Swap(0, 1);
-        });
+        Execute(() => { Items.Swap(0, 1); });
     }
 
     private void Insert()
@@ -123,18 +120,12 @@ public class ObservableListViewModel
 
     private void RemoveAll()
     {
-        Execute(() =>
-        {
-            Items.RemoveAll(x => x.Name.Contains("a"));
-        });
+        Execute(() => { Items.RemoveAll(x => x.Name.Contains("a")); });
     }
 
     private void RemoveRange()
     {
-        Execute(() =>
-        {
-            Items.RemoveRange(5, 5);
-        });
+        Execute(() => { Items.RemoveRange(5, 5); });
     }
 
     private void Execute(Action action)

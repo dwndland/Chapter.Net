@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="ValidatableObservableObjectTests.cs" company="my-libraries">
+// <copyright file="ValidatableObservableObjectTests.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -529,5 +529,4 @@ public class ValidatableObservableObjectTests
             triggered2 = propertyNames.Contains(e.PropertyName);
         }
     }
-
 }

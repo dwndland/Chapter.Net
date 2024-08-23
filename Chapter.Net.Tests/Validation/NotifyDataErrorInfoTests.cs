@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="NotifyDataErrorInfoTests.cs" company="my-libraries">
+// <copyright file="NotifyDataErrorInfoTests.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -16,8 +16,8 @@ namespace Chapter.Net.Tests;
 
 public class NotifyDataErrorInfoTests
 {
-    private NotifyDataErrorInfo _target;
     private string _lastPropertyChanged;
+    private NotifyDataErrorInfo _target;
 
     [SetUp]
     public void SetUp()

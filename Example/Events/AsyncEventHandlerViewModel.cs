@@ -1,5 +1,5 @@
 ﻿// -----------------------------------------------------------------------------------------------------------------
-// <copyright file="AsyncEventHandlerViewModel.cs" company="my-libraries">
+// <copyright file="AsyncEventHandlerViewModel.cs" company="dwndland">
 //     Copyright (c) David Wendland. All rights reserved.
 // </copyright>
 // -----------------------------------------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ public class AsyncEventHandlerViewModel
     public IDelegateCommand SendAsyncEventCommand { get; }
 
     public EventReceiver EventReceiver { get; }
-    
+
     public event AsyncEventHandler DemoEvent;
 
     private async Task SendAsyncEvent()
