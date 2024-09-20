@@ -17,17 +17,25 @@ public class CollectionExViewModel
     {
         var input = new List<int> { 1, 15, 22, 16 };
 
-        var target = new List<int>();
+        ICollection<int> collection = new List<int>();
         foreach (var i in input)
-            target.AddIf(i, x => x > 15);
+            collection.AddIf(i, x => x > 15);
     }
 
     private void AddIfNotNull()
     {
         var input = new List<string> { "1", "2", null, "3", null };
 
-        var target = new List<string>();
+        ICollection<string> target = new List<string>();
         foreach (var i in input)
             target.AddIfNotNull(i);
+    }
+
+    private void AddIfNeeded()
+    {
+        ICollection<string> list = new List<string> { "1", "2", "4" };
+
+        list.AddIfNeeded("1");
+        list.AddIfNeeded("5");
     }
 }

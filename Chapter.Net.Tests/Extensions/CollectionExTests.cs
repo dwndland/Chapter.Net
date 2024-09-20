@@ -19,7 +19,7 @@ public class CollectionExTests
         var input = new List<int> { 1, 15, 22, 16 };
         var expected = new List<int> { 22, 16 };
 
-        var target = new List<int>();
+        ICollection<int> target = new List<int>();
         foreach (var i in input)
             target.AddIf(i, x => x > 15);
 
@@ -29,7 +29,7 @@ public class CollectionExTests
     [Test]
     public void AddIf_CalledOnNullList_ThrowsException()
     {
-        List<int> target = null;
+        ICollection<int> target = null;
 
         Assert.That(() => target.AddIf(1, _ => true), Throws.ArgumentNullException);
     }
@@ -37,7 +37,7 @@ public class CollectionExTests
     [Test]
     public void AddIf_CalledWithNullCondition_ThrowsException()
     {
-        var target = new List<int>();
+        ICollection<int> target = new List<int>();
 
         Assert.That(() => target.AddIf(1, null), Throws.ArgumentNullException);
     }
@@ -45,7 +45,7 @@ public class CollectionExTests
     [Test]
     public void AddIfNotNull_CalledOnNullList_ThrowsException()
     {
-        List<string> target = null;
+        ICollection<string> target = null;
 
         Assert.That(() => target.AddIfNotNull(""), Throws.ArgumentNullException);
     }
@@ -56,9 +56,41 @@ public class CollectionExTests
         var input = new List<string> { "1", "2", null, "3", null };
         var expected = new List<string> { "1", "2", "3" };
 
-        var target = new List<string>();
+        ICollection<string> target = new List<string>();
         foreach (var i in input)
             target.AddIfNotNull(i);
+
+        Assert.That(target, Is.EqualTo(expected));
+    }
+
+    [Test]
+    public void AddIfNeeded_CalledOnNullList_ThrowsException()
+    {
+        ICollection<string> target = null;
+
+        Assert.That(() => target.AddIfNeeded(""), Throws.ArgumentNullException);
+    }
+
+    [Test]
+    public void AddIfNeeded_CalledWithKnownItem_DoesNotAddTheItem()
+    {
+        ICollection<string> target = new List<string> { "1", "2", "3", };
+        var item = "3";
+        var expected = new List<string> { "1", "2", "3" };
+
+        target.AddIfNeeded(item);
+
+        Assert.That(target, Is.EqualTo(expected));
+    }
+
+    [Test]
+    public void AddIfNeeded_CalledWithUnknownItem_AddTheItem()
+    {
+        ICollection<string> target = new List<string> { "1", "2", "3", };
+        var item = "4";
+        var expected = new List<string> { "1", "2", "3", "4" };
+
+        target.AddIfNeeded(item);
 
         Assert.That(target, Is.EqualTo(expected));
     }
