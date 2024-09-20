@@ -374,6 +374,8 @@ public class ObservableList<T> : Collection<T>, INotifyCollectionChanged, INotif
     public virtual void RemoveRange(int index, int count)
     {
         ArgumentNullException.ThrowIfNull(count);
+        if (count < 1)
+            throw new ArgumentOutOfRangeException(nameof(count), count, "count cannot be less than 1.");
 
         _invokator.Invoke(() =>
         {

@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added AddIfNeeded extensions to the List.
 - Added AddIfNeeded extenbsion to the ICollection
+### Fixed
+- Fixed missing length check on the ObservableList.RemoveRange
 
 ## [2.0.0] - 2024-06-07
 ### Changed
