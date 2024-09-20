@@ -101,7 +101,7 @@ public static class ListEx
     }
 
     /// <summary>
-    ///     Adds all items to the collection where the filter matches.
+    ///     Adds all items to the list where the filter matches.
     /// </summary>
     /// <typeparam name="T">The inner type of the list.</typeparam>
     /// <param name="list">The list to add the items to.</param>
@@ -121,7 +121,7 @@ public static class ListEx
     }
 
     /// <summary>
-    ///     Adds all not null items to the collection.
+    ///     Adds all not null items to the list.
     /// </summary>
     /// <typeparam name="T">The inner type of the list.</typeparam>
     /// <param name="list">The list to add the items to.</param>
@@ -181,7 +181,7 @@ public static class ListEx
     }
 
     /// <summary>
-    ///     Inserts all items to the collection where the filter matches.
+    ///     Inserts all items to the list where the filter matches.
     /// </summary>
     /// <typeparam name="T">The inner type of the list.</typeparam>
     /// <param name="list">The list to insert the items in.</param>
@@ -202,7 +202,7 @@ public static class ListEx
     }
 
     /// <summary>
-    ///     Inserts all not null items to the collection.
+    ///     Inserts all not null items to the list.
     /// </summary>
     /// <typeparam name="T">The inner type of the list.</typeparam>
     /// <param name="list">The list to insert the items in.</param>
@@ -216,5 +216,27 @@ public static class ListEx
         ArgumentNullException.ThrowIfNull(items);
 
         list.InsertRangeIf(index, items, x => x != null);
+    }
+
+    /// <summary>
+    ///     Dynamically adds the item to the list if it is not yet in (Equals comparison).
+    /// </summary>
+    /// <typeparam name="T">The inner type of the list.</typeparam>
+    /// <param name="list">The list to add the item to.</param>
+    /// <param name="item">The item to add.</param>
+    /// <returns>True if the item got added; otherwise false.</returns>
+    /// <exception cref="ArgumentNullException">list cannot be null.</exception>
+    public static bool AddIfNeeded<T>(this List<T> list, T item)
+    {
+        ArgumentNullException.ThrowIfNull(list);
+
+        var existing = list.FirstOrDefault(x => Equals(x, item));
+        if (existing == null)
+        {
+            list.Add(item);
+            return true;
+        }
+
+        return false;
     }
 }

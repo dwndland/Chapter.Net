@@ -20,6 +20,12 @@ public class GarbageTruckTests
         _target = new GarbageTruck();
     }
 
+    [TearDown]
+    public void Teardown()
+    {
+        _target.Dispose();
+    }
+
     [Test]
     public void Add_CalledWithNull_ThrowsException()
     {

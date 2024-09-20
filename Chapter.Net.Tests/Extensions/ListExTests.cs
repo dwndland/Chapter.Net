@@ -431,4 +431,36 @@ public class ListExTests
 
         Assert.That(collection, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void AddIfNeeded_CalledOnNullList_ThrowsException()
+    {
+        List<string> target = null;
+
+        Assert.That(() => target.AddIfNeeded(""), Throws.ArgumentNullException);
+    }
+
+    [Test]
+    public void AddIfNeeded_CalledWithKnownItem_DoesNotAddTheItem()
+    {
+        var target = new List<string> { "1", "2", "3", };
+        var item = "3";
+        var expected = new List<string> { "1", "2", "3" };
+
+        target.AddIfNeeded(item);
+
+        Assert.That(target, Is.EqualTo(expected));
+    }
+
+    [Test]
+    public void AddIfNeeded_CalledWithUnknownItem_AddTheItem()
+    {
+        var target = new List<string> { "1", "2", "3", };
+        var item = "4";
+        var expected = new List<string> { "1", "2", "3", "4" };
+
+        target.AddIfNeeded(item);
+
+        Assert.That(target, Is.EqualTo(expected));
+    }
 }
