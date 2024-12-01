@@ -373,7 +373,6 @@ public class ObservableList<T> : Collection<T>, INotifyCollectionChanged, INotif
     /// <exception cref="ArgumentOutOfRangeException">count after the index got out of range.</exception>
     public virtual void RemoveRange(int index, int count)
     {
-        ArgumentNullException.ThrowIfNull(count);
         if (count < 1)
             throw new ArgumentOutOfRangeException(nameof(count), count, "count cannot be less than 1.");
 
@@ -422,7 +421,7 @@ public class ObservableList<T> : Collection<T>, INotifyCollectionChanged, INotif
     /// <summary>
     ///     Sorts the collection by the given <see cref="IComparer{T}" />.
     /// </summary>
-    /// <param name="comparer">The <see cref="IComparer{T}" /> to be used when sort.</param>
+    /// <param name="comparer">The <see cref="IComparer{T}" /> to be used when sorting.</param>
     /// <exception cref="ArgumentNullException">comparer cannot be null.</exception>
     public virtual void Sort(IComparer<T> comparer)
     {
@@ -449,7 +448,7 @@ public class ObservableList<T> : Collection<T>, INotifyCollectionChanged, INotif
     /// <summary>
     ///     Sorts the collection by the given <see cref="Comparison{T}" />.
     /// </summary>
-    /// <param name="comparison">The <see cref="Comparison{T}" /> to be used when sort.</param>
+    /// <param name="comparison">The <see cref="Comparison{T}" /> to be used when sorting.</param>
     /// <exception cref="ArgumentNullException">comparison cannot be null.</exception>
     public virtual void Sort(Comparison<T> comparison)
     {
@@ -478,7 +477,7 @@ public class ObservableList<T> : Collection<T>, INotifyCollectionChanged, INotif
     /// </summary>
     /// <param name="index">The index where to start the sorting from.</param>
     /// <param name="count">The amount of elements to sort.</param>
-    /// <param name="comparer">The <see cref="IComparer{T}" /> to be used when sort.</param>
+    /// <param name="comparer">The <see cref="IComparer{T}" /> to be used when sorting.</param>
     /// <exception cref="ArgumentOutOfRangeException">index is out of range.</exception>
     /// <exception cref="ArgumentOutOfRangeException">count after the index got out of range.</exception>
     /// <exception cref="ArgumentNullException">comparer cannot be null.</exception>

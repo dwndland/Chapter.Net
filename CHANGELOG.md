@@ -7,16 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2024-12-01
+### Added
+- Added .net 9 to the supported .net versions.
+### Supported .Net Versions
+- .Net 8
+- .Net 9
+
 ## [2.1.0] - 2024-09-20
 ### Added
 - Added AddIfNeeded extensions to the List.
 - Added AddIfNeeded extenbsion to the ICollection
 ### Fixed
 - Fixed missing length check on the ObservableList.RemoveRange
+### Supported .Net Versions
+- .Net 8
 
 ## [2.0.0] - 2024-06-07
 ### Changed
 - Update to support .Net 8 only.
+### Supported .Net Versions
+- .Net 8
 
 ## [1.1.0] - 2024-03-31
 ### Added

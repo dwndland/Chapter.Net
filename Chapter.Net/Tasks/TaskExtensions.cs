@@ -7,6 +7,7 @@
 using System;
 using System.Threading.Tasks;
 
+// ReSharper disable AsyncVoidMethod
 // ReSharper disable once CheckNamespace
 
 namespace Chapter.Net;
@@ -34,9 +35,9 @@ public static class TaskExtensions
     ///     Use this to show that you want to execute a task without to wait for its result. (async void)
     /// </summary>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up action.</param>
+    /// <param name="then">The followup action.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
@@ -55,9 +56,9 @@ public static class TaskExtensions
     ///     Use this to show that you want to execute a task without to wait for its result. (async void)
     /// </summary>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up task.</param>
+    /// <param name="then">The followup task.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
@@ -99,10 +100,10 @@ public static class TaskExtensions
     ///     Use this to show that you want to execute a task without to wait for its result. (async void)
     /// </summary>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up action.</param>
+    /// <param name="then">The followup action.</param>
     /// <param name="onError">The exception callback.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
@@ -130,10 +131,10 @@ public static class TaskExtensions
     ///     Use this to show that you want to execute a task without to wait for its result. (async void)
     /// </summary>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up task.</param>
+    /// <param name="then">The followup task.</param>
     /// <param name="onError">The exception callback.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
@@ -162,9 +163,9 @@ public static class TaskExtensions
     /// </summary>
     /// <typeparam name="T">The task return type.</typeparam>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up action with the given task return.</param>
+    /// <param name="then">The followup action with the given task return.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
@@ -184,9 +185,9 @@ public static class TaskExtensions
     /// </summary>
     /// <typeparam name="T">The task return type.</typeparam>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up task with the given task return.</param>
+    /// <param name="then">The followup task with the given task return.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
@@ -206,10 +207,10 @@ public static class TaskExtensions
     /// </summary>
     /// <typeparam name="T">The task return type.</typeparam>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up action with the given task return.</param>
+    /// <param name="then">The followup action with the given task return.</param>
     /// <param name="onError">The exception callback.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
@@ -238,10 +239,10 @@ public static class TaskExtensions
     /// </summary>
     /// <typeparam name="T">The task return type.</typeparam>
     /// <param name="task">The task to execute.</param>
-    /// <param name="then">The follow up task with the given task return.</param>
+    /// <param name="then">The followup task with the given task return.</param>
     /// <param name="onError">The exception callback.</param>
     /// <param name="continueOnCapturedContext">
-    ///     Defines if to continue on the caller context before execute the follow up
+    ///     Defines if to continue on the caller context before execute the followup
     ///     action.
     /// </param>
     /// <exception cref="ArgumentNullException">task cannot be null.</exception>
