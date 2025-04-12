@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/dwndland/Chapter.Net/master/Icon.png" alt="logo" width="64"/>
+![Chapter](https://raw.githubusercontent.com/dwndland/Chapter.Net/master/Icon.png)
 
 # Chapter.Net Library
 
