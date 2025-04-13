@@ -4,8 +4,8 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <Version>2.2.0</Version>
     <Authors>David Wendland</Authors>
-    <Description>Chapter.Net brings classes and operations for every day projects. Its the perfect base for any MVVM project.</Description>
-    <Copyright>Copyright (c) 2024 David Wendland</Copyright>
+    <Description>Chapter.Net is a lightweight core library for .NET that provides commands, events, observable collections, task utilities, and other foundational helpers to simplify application development.</Description>
+    <Copyright>Copyright (c) 2025 David Wendland</Copyright>
     <PackageProjectUrl>https://github.com/dwndland/Chapter.Net</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

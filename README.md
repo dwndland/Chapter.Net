@@ -3,7 +3,7 @@
 # Chapter.Net Library
 
 ## Overview
-Chapter.Net brings classes and operations for every day projects. Its the perfect base for any MVVM project.
+Chapter.Net is a lightweight core library for .NET that provides commands, events, observable collections, task utilities, and other foundational helpers to simplify application development.
 
 ## Features
 - **ObservableObject:** A base class implementing INotifyPropertyChanging and INotifyPropertyChanged.
