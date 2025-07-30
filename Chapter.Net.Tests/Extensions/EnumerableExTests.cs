@@ -48,7 +48,7 @@ public class EnumerableExTests
         // ReSharper disable once CollectionNeverUpdated.Local
         IEnumerable<int> collection = new List<int>();
 
-        Assert.That(() => collection.ForEach(null), Throws.ArgumentNullException);
+        Assert.That(() => collection.ForEach((Action<int>)null), Throws.ArgumentNullException);
     }
 
     [Test]
@@ -60,6 +60,32 @@ public class EnumerableExTests
         source.ForEach(x => target.Add(x));
 
         Assert.That(source, Is.EqualTo(target));
+    }
+
+    [Test]
+    public void ForEach_WithIntCalledWithNullCallback_ThrowsException()
+    {
+        // ReSharper disable once CollectionNeverUpdated.Local
+        IEnumerable<int> collection = new List<int>();
+
+        Assert.That(() => collection.ForEach((Action<int, int>)null), Throws.ArgumentNullException);
+    }
+
+    [Test]
+    public void ForEach_WithIntCalled_CallsCallbackForEachItem()
+    {
+        var source = new List<int> { 44, 12, 3 };
+        var expected = new Dictionary<int, int>
+        {
+            { 0, 44 },
+            { 1, 12 },
+            { 2, 3 }
+        };
+        var target = new Dictionary<int, int>();
+
+        source.ForEach((x, i) => target[i] = x);
+
+        Assert.That(target, Is.EqualTo(expected));
     }
 
     [Test]

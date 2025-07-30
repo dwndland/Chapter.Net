@@ -27,6 +27,14 @@ public class EnumerableExViewModel
         source.ForEach(x => target.Add(x));
     }
 
+    private void ForEachInt()
+    {
+        IEnumerable<int> source = new List<int> { 44, 12, 3 };
+        var target = new Dictionary<int, int>();
+
+        source.ForEach((x, i) => target[i] = x);
+    }
+
     private void Shuffle()
     {
         var source = new List<int> { 44, 12, 3, 15, 50, 456 };

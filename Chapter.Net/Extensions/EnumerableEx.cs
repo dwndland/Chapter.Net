@@ -51,6 +51,24 @@ public static class EnumerableEx
     }
 
     /// <summary>
+    ///     Executes an action for each entry of an <see cref="IEnumerable{T}" />.
+    /// </summary>
+    /// <typeparam name="T">The inner type of the <see cref="IEnumerable{T}" />.</typeparam>
+    /// <param name="elements">The collection to loop.</param>
+    /// <param name="action">The action to call for each element including the item index.</param>
+    /// <exception cref="ArgumentNullException">elements cannot be null.</exception>
+    /// <exception cref="ArgumentNullException">action cannot be null.</exception>
+    public static void ForEach<T>(this IEnumerable<T> elements, Action<T, int> action)
+    {
+        ArgumentNullException.ThrowIfNull(elements);
+        ArgumentNullException.ThrowIfNull(action);
+
+        var i = 0;
+        foreach (var element in elements)
+            action(element, i++);
+    }
+
+    /// <summary>
     ///     Shuffles the elements.
     /// </summary>
     /// <typeparam name="T">The inner type of the <see cref="IEnumerable{T}" />.</typeparam>
