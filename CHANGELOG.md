@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added ForEach extension with the additional index parameter for each item.
+### Changed
+- The ObservableObject.NotifyAndSetIfChanged now additionally returns a boolean indicating if the value was changed.
 ### Supported .Net Versions
 - .Net 8
 - .Net 9

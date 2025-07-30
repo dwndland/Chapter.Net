@@ -68,9 +68,15 @@ public abstract class ObservableObject : INotifyPropertyChanging, INotifyPropert
     /// <param name="backingField">The property backing field.</param>
     /// <param name="newValue">The new property value.</param>
     /// <param name="propertyName">The name of the property.</param>
-    protected void NotifyAndSetIfChanged<T>(ref T backingField, T newValue, [CallerMemberName] string propertyName = null)
+    /// <returns>True if the value got set; otherwise false.</returns>
+    protected bool NotifyAndSetIfChanged<T>(ref T backingField, T newValue, [CallerMemberName] string propertyName = null)
     {
         if (!Equals(backingField, newValue))
+        {
             NotifyAndSet(ref backingField, newValue, propertyName);
+            return true;
+        }
+
+        return false;
     }
 }

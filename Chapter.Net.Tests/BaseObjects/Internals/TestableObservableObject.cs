@@ -17,6 +17,8 @@ internal class TestableObservableObject : ObservableObject
     private string _selfWithoutPropertyName;
     private string _selfWithPropertyName;
 
+    public bool NotifyAndSetIfChangedResult { get; set; }
+
     public string SelfWithoutPropertyName
     {
         get => _selfWithoutPropertyName;
@@ -54,12 +56,12 @@ internal class TestableObservableObject : ObservableObject
     public string BaseSetIfChangedWithoutPropertyName
     {
         get => _baseSetIfChangedWithoutPropertyName;
-        set => NotifyAndSetIfChanged(ref _baseSetIfChangedWithoutPropertyName, value);
+        set => NotifyAndSetIfChangedResult = NotifyAndSetIfChanged(ref _baseSetIfChangedWithoutPropertyName, value);
     }
 
     public string BaseSetIfChangedWithPropertyName
     {
         get => _baseSetIfChangedWithPropertyName;
-        set => NotifyAndSetIfChanged(ref _baseSetIfChangedWithPropertyName, value, "PropertyName");
+        set => NotifyAndSetIfChangedResult = NotifyAndSetIfChanged(ref _baseSetIfChangedWithPropertyName, value, "PropertyName");
     }
 }

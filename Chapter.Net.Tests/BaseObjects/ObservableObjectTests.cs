@@ -287,11 +287,13 @@ public class ObservableObjectTests
     public void NotifyAndSetIfChanged_CalledWithUnchangedValueWithoutPropertyName_RaisesNothing()
     {
         _target.BaseSetIfChangedWithoutPropertyName = "Test";
-
         _target.PropertyChanging += TargetOnPropertyChanging;
         _target.PropertyChanged += TargetOnPropertyChanged;
+        _target.NotifyAndSetIfChangedResult = false;
 
         _target.BaseSetIfChangedWithoutPropertyName = "Test";
+
+        Assert.That(_target.NotifyAndSetIfChangedResult, Is.False);
         return;
 
         void TargetOnPropertyChanging(object sender, PropertyChangingEventArgs e)
@@ -311,11 +313,13 @@ public class ObservableObjectTests
     public void NotifyAndSetIfChanged_CalledWithUnchangedValueWithPropertyName_RaisesNothing()
     {
         _target.BaseSetIfChangedWithPropertyName = "Test";
-
         _target.PropertyChanging += TargetOnPropertyChanging;
         _target.PropertyChanged += TargetOnPropertyChanged;
+        _target.NotifyAndSetIfChangedResult = false;
 
         _target.BaseSetIfChangedWithPropertyName = "Test";
+
+        Assert.That(_target.NotifyAndSetIfChangedResult, Is.False);
         return;
 
         void TargetOnPropertyChanging(object sender, PropertyChangingEventArgs e)
@@ -336,12 +340,13 @@ public class ObservableObjectTests
     {
         var triggered = false;
         _target.BaseSetIfChangedWithoutPropertyName = "Test";
-
+        _target.NotifyAndSetIfChangedResult = false;
         _target.PropertyChanging += TargetOnPropertyChanging;
 
         _target.BaseSetIfChangedWithoutPropertyName = "New Test";
 
         Assert.That(triggered, Is.True);
+        Assert.That(_target.NotifyAndSetIfChangedResult, Is.True);
         return;
 
         void TargetOnPropertyChanging(object sender, PropertyChangingEventArgs e)
@@ -357,12 +362,13 @@ public class ObservableObjectTests
     {
         var triggered = false;
         _target.BaseSetIfChangedWithoutPropertyName = "Test";
-
+        _target.NotifyAndSetIfChangedResult = false;
         _target.PropertyChanged += TargetOnPropertyChanged;
 
         _target.BaseSetIfChangedWithoutPropertyName = "New Test";
 
         Assert.That(triggered, Is.True);
+        Assert.That(_target.NotifyAndSetIfChangedResult, Is.True);
         return;
 
         void TargetOnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -378,12 +384,13 @@ public class ObservableObjectTests
     {
         var triggered = false;
         _target.BaseSetIfChangedWithPropertyName = "Test";
-
+        _target.NotifyAndSetIfChangedResult = false;
         _target.PropertyChanging += TargetOnPropertyChanging;
 
         _target.BaseSetIfChangedWithPropertyName = "New Test";
 
         Assert.That(triggered, Is.True);
+        Assert.That(_target.NotifyAndSetIfChangedResult, Is.True);
         return;
 
         void TargetOnPropertyChanging(object sender, PropertyChangingEventArgs e)
@@ -399,12 +406,13 @@ public class ObservableObjectTests
     {
         var triggered = false;
         _target.BaseSetIfChangedWithPropertyName = "Test";
-
+        _target.NotifyAndSetIfChangedResult = false;
         _target.PropertyChanged += TargetOnPropertyChanged;
 
         _target.BaseSetIfChangedWithPropertyName = "New Test";
 
         Assert.That(triggered, Is.True);
+        Assert.That(_target.NotifyAndSetIfChangedResult, Is.True);
         return;
 
         void TargetOnPropertyChanged(object sender, PropertyChangedEventArgs e)
